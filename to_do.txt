@@ -3,7 +3,3 @@
     - custom sizes
 - do-it-yourself rows
 - check character count button
-- please do something
-- one more check
-- yet again
-- okay. final one. i think i fixed it. <gets anvil dropped on head>
