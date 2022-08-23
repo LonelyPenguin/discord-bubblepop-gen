@@ -1,0 +1,5 @@
+- grid– box-by-box
+    - autopopulated option
+    - custom sizes
+- do-it-yourself rows
+- check character count button
