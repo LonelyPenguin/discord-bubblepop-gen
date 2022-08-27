@@ -12,16 +12,19 @@ def gen_page():
     mycontext = {}
 
     if request.method == "POST":
-        myform = request.form
-        print(myform)
-        mycontext["num_rows"] = int(myform["num_rows"])
 
-    else:
-        mycontext["num_rows"] = 8
+        myform = request.form
+
+        if myform.get("editor_select") == "grid":
+            print("using grid editor")
+            grid_input()
+        else:
+            print("using basic editor")
 
     return render_template("gen_page.html", context=mycontext)
 
-
+def grid_input():
+    pass
 
 
 @app.route("/hello", methods=("GET", "POST"))
@@ -30,4 +33,4 @@ def hello_world():
         mydata = request.form["mytext"]
         print("hello " + mydata)
         return render_template("hello.html", context={"fill_text": mydata})
-    return render_template("hello.html")
+    return render_template("hello.html", context={"fill_text": ""})
