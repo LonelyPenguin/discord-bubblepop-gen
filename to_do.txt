@@ -1,5 +1,16 @@
-- grid– box-by-box
-    - autopopulated option
-    - custom sizes
-- do-it-yourself rows
-- check character count button
+- no rows, if doing rows might as well do plaintext input
+- plain input box option
+- grid of paint-by-numbers option
+    - autofill option
+- check character count warning
+
+
+- parent: 
+    - title
+    - "diy box/paint-by-numbers grid" option + submit
+    - {% block %} w/ basic text box option as default
+    - results box
+
+- child: 
+    - grid dimensions inputs
+    - autofill textbox
