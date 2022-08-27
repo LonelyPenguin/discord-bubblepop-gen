@@ -6,9 +6,23 @@ from markupsafe import escape
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=("GET", "POST"))
 def gen_page():
-    return render_template("gen_page.html")
+    
+    mycontext = {}
+
+    if request.method == "POST":
+        myform = request.form
+        print(myform)
+        mycontext["num_rows"] = int(myform["num_rows"])
+
+    else:
+        mycontext["num_rows"] = 8
+
+    return render_template("gen_page.html", context=mycontext)
+
+
+
 
 @app.route("/hello", methods=("GET", "POST"))
 def hello_world():
