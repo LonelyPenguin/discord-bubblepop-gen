@@ -2,12 +2,14 @@
 
 {% block inputarea %}
 <form action="" method="post" name="num_rows_input">
+    <input type="hidden" name="editor" value="grid">
     <label>Number of rows (warning: changing this will erase any previous input):
         <input type="number" name="num_rows">
     </label>
 </form>
 
 <form action="" method="post" name="bubbles_grid">
+    <input type="hidden" name="editor" value="grid">
     <p>Enter your bubble contents here, separated by commas or spaces:</p>
     {% for row in range(context["num_rows"]) %}
         <p><input type="text" name={{ row|string() }}></p>

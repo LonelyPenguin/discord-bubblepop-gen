@@ -14,17 +14,34 @@ def gen_page():
     if request.method == "POST":
 
         myform = request.form
-
-        if myform.get("editor_select") == "grid":
+        print(myform.items)
+        print(myform.get("editor"))
+        
+        if myform.get("editor") == "grid" or myform.get("editors_select") == "grid":
             print("using grid editor")
-            grid_input()
-        else:
+            return grid_input(myform)
+
+        elif myform.get("editor") == "basic" or myform.get("editors_select") == "basic":
             print("using basic editor")
+
+        else:
+            pass
+
+
 
     return render_template("gen_page.html", context=mycontext)
 
-def grid_input():
-    pass
+def grid_input(form):
+
+    mycontext = {}
+    
+    num_rows = form.get("num_rows")
+    if num_rows:
+        mycontext["num_rows"] = int(num_rows)
+    else:
+        mycontext["num_rows"] = 8
+
+    return render_template("grid_input.html", context=mycontext)
 
 
 @app.route("/hello", methods=("GET", "POST"))

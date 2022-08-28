@@ -5,26 +5,28 @@
     </head>
     <body>
 
-        <form action="" method="post">
-            <p>
+        <form action="" name="choose_editor" method="post">
+            
             <label for="editor_select">Change editor:</label>
-            <select id="editor_select">
-                <option value="">--Choose an editor--</option>
-                <option value="basic">Basic</option>
+            <select name="editors_select" id="editor_select">
+                <option value="">--Choose editor--</option>
+                <option value="basic">Basic editor</option>
                 <option value="grid">Grid editor (more features)</option>
             </select>
             <input type="submit" value="Use editor">
-            </p>
+            
         </form>
 
         {% block inputarea %}
             <form action="" method="post">
+                <input type="hidden" name="editor" value="basic">
                 <label for="freeform_entry">Construct your message below! Separate bubbles by commas or spaces, and separate rows with a new line.</label>
                 <p><textarea id="freeform_entry" name="freeform_entry" rows="8" cols="32">Enter text here</textarea></p>
                 <input type="submit" value="I'm finished!">
             </form> 
         {% endblock %}
 
-        <textarea>{{ context["final_output"] }}</textarea>
+        <textarea>{{ context["final_output"] }}</textarea> 
+
     </body>
 </html>
