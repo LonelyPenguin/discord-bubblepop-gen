@@ -14,9 +14,7 @@ def gen_page():
     if request.method == "POST":
 
         myform = request.form
-        print(myform.items)
-        print(myform.get("editor"))
-        
+
         if myform.get("editor") == "grid" or myform.get("editors_select") == "grid":
             print("using grid editor")
             return grid_input(myform)
@@ -24,22 +22,28 @@ def gen_page():
         elif myform.get("editor") == "basic" or myform.get("editors_select") == "basic":
             print("using basic editor")
 
-        else:
-            pass
-
-
-
     return render_template("gen_page.html", context=mycontext)
 
 def grid_input(form):
 
     mycontext = {}
-    
+
+    # get inputted dimensions, if any
     num_rows = form.get("num_rows")
+    num_cols = form.get("num_cols")
+
+
+    # set defaults, to be overriden
+    mycontext["set_rows"] = 8
+    mycontext["set_cols"] = 8
+
+
+    # override defaults, if dimensions provided
     if num_rows:
-        mycontext["num_rows"] = int(num_rows)
-    else:
-        mycontext["num_rows"] = 8
+        mycontext["set_rows"] = int(num_rows)
+    if num_cols:
+        mycontext["set_cols"] = int(num_cols)
+
 
     return render_template("grid_input.html", context=mycontext)
 

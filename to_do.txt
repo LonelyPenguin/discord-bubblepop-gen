@@ -1,9 +1,7 @@
-- no rows, if doing rows might as well do plaintext input
-- plain input box option
-- grid of paint-by-numbers option
-    - autofill option
+- autofill
 - check character count warning
-
+- no matter input method, create list of lists, join by "|| ||" and "||/n||"
+- css so it actually looks right
 
 - parent: 
     - title
