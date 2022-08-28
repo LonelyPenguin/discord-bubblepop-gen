@@ -31,19 +31,20 @@ def grid_input(form):
     # get inputted dimensions, if any
     num_rows = form.get("num_rows")
     num_cols = form.get("num_cols")
-
+    autofill = form.get("autofill")
 
     # set defaults, to be overriden
     mycontext["set_rows"] = 8
     mycontext["set_cols"] = 8
-
+    mycontext["prefill"] = ""
 
     # override defaults, if dimensions provided
     if num_rows:
         mycontext["set_rows"] = int(num_rows)
     if num_cols:
         mycontext["set_cols"] = int(num_cols)
-
+    if autofill:
+        mycontext["prefill"] = autofill
 
     return render_template("grid_input.html", context=mycontext)
 

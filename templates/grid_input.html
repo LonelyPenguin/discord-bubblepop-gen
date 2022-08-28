@@ -11,7 +11,9 @@
     <p><label>Number of columns (warning: changing this will erase any previous input):
         <input type="number" name="num_cols">
     </label></p>
-
+    <p><label>Autofill grid (leave blank for none):
+        <input type="text" name="autofill">
+    </label></p>
     <p><input type="submit" value="Create grid"></p>
 
 </form>
@@ -22,7 +24,7 @@
     {% for row in range(context["set_rows"]) %}
         <p>
             {% for col in range(context["set_cols"]) %}
-                <input type="text" name={{ [row, col]|join(",") }}>
+                <input type="text" name={{ [row, col]|join(",") }} value={{ context["prefill"] }}>
             {% endfor %}
         </p>
     {% endfor %}
