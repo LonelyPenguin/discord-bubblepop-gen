@@ -24,7 +24,7 @@
     {% for row in range(context["set_rows"]) %}
         <p>
             {% for col in range(context["set_cols"]) %}
-                <input type="text" name="point{{ row }},{{ col }}" value={{ context["prefill"] }}>
+                <input type="text" name="point{{ row }},{{ col }}" value="{{ context["prefill"] }}">
             {% endfor %}
         </p>
     {% endfor %}
