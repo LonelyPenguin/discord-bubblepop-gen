@@ -77,7 +77,7 @@ def grid_input(form):
             continue
 
         key = key.replace("point", "")
-        key = (int(key[0]), int(key[2]))
+        key = [int(i) for i in key.split(",")]
         print(key)
 
         individual_bubbles_list.append((key, value))
