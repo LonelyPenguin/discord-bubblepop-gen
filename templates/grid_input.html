@@ -20,11 +20,11 @@
 
 <form action="" method="post" name="bubbles_grid">
     <input type="hidden" name="editor" value="grid">
-    <p>Enter your bubble contents here, separated by commas or spaces:</p>
+    <p>Enter your bubble contents here, one bubble per box:</p>
     {% for row in range(context["set_rows"]) %}
         <p>
             {% for col in range(context["set_cols"]) %}
-                <input type="text" name={{ [row, col]|join(",") }} value={{ context["prefill"] }}>
+                <input type="text" name="point{{ row }},{{ col }}" value={{ context["prefill"] }}>
             {% endfor %}
         </p>
     {% endfor %}

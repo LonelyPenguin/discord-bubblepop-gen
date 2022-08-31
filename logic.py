@@ -68,6 +68,44 @@ def grid_input(form):
     if autofill:
         mycontext["prefill"] = autofill
 
+    # deal with possible input
+    individual_bubbles_list = []
+
+    # step 0: get everything into one list and into integers when necessary.
+    for key, value in form.items():
+        if key[0:5] != "point":
+            continue
+
+        key = key.replace("point", "")
+        key = (int(key[0]), int(key[2]))
+        print(key)
+
+        individual_bubbles_list.append((key, value))
+
+    rows_list = []
+    # default row size to define the variable
+    row_size = 8
+
+    # figure out row length by finding the end of the first row
+    for i, bubble in enumerate(individual_bubbles_list):
+        if bubble[0][0] < individual_bubbles_list[i+1][0][0]:
+            row_size = bubble[0][1] + 1
+            break
+
+    # create rows with only the bubble content
+    for i in range(0, len(individual_bubbles_list), row_size):
+        bloated_row = individual_bubbles_list[i:i+row_size]
+        filtered_row = [value[1] for value in bloated_row]
+        rows_list.append(filtered_row)
+
+    spoilered_rows = []
+    for row in rows_list:
+        spoilered_rows.append("||" + "||||".join(row) + "||")
+
+    output = "\n".join(spoilered_rows)
+
+    mycontext["final_output"] = output
+
     return render_template("grid_input.html", context=mycontext)
 
 

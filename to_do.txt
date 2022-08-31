@@ -1,7 +1,9 @@
-
 - check character count warning
-- no matter input method, create list of lists, join by "|| ||" and "||/n||"
 - css so it actually looks right
+- investigate autofill not liking spaces (probable solution: put quotes around autofill filling in template)
+- get favicon so http stops bugging me about it
+- change default editor in dropdown depending on current editor
+- output  rows="16" cols="64"
 
 - parent: 
     - title
