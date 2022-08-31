@@ -1,8 +1,10 @@
 - check character count warning
-- css so it actually looks right
-- investigate autofill not liking spaces (probable solution: put quotes around autofill filling in template)
+- make it prettier
+    - standardize spacing
+    - add title, heading, explanation?
+    - add my github?
+    - make grid boxes shorter
 - get favicon so http stops bugging me about it
-- change default editor in dropdown depending on current editor
 
 - parent: 
     - title

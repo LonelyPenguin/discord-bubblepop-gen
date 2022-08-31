@@ -1,5 +1,12 @@
 {% extends "gen_page.html" %}
 
+{% block dropdown %}
+
+<option value="grid">Grid editor</option>
+<option value="basic">Basic editor (plain textbox)</option>
+
+{% endblock %}
+
 {% block inputarea %}
 
 <form action="" method="post" name="num_rows_input">

@@ -9,9 +9,10 @@
             
             <label for="editor_select">Change editor:</label>
             <select name="editors_select" id="editor_select">
-                <option value="">--Choose editor--</option>
+                {% block dropdown %}
                 <option value="basic">Basic editor</option>
-                <option value="grid">Grid editor (more features)</option>
+                <option value="grid">Grid editor (autofill option)</option>
+                {% endblock %}
             </select>
             <input type="submit" value="Use editor">
             
