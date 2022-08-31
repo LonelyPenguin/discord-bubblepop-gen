@@ -3,7 +3,6 @@
     - standardize spacing
     - add title, heading, explanation?
     - add my github?
-    - make grid boxes shorter
 - get favicon so http stops bugging me about it
 
 - parent: 
