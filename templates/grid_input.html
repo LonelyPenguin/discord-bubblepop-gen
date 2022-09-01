@@ -12,13 +12,13 @@
 <form action="" method="post" name="num_rows_input">
     <input type="hidden" name="editor" value="grid">
     
-    <p><label>Number of rows (warning: changing this will erase any previous input):
+    <p><label>Number of rows:
         <input type="number" name="num_rows">
     </label></p>
-    <p><label>Number of columns (warning: changing this will erase any previous input):
+    <p><label>Number of columns:
         <input type="number" name="num_cols">
     </label></p>
-    <p><label>Autofill grid (leave blank for none):
+    <p><label>Automatically populate grid (leave blank for none):
         <input type="text" name="autofill">
     </label></p>
     <p><input type="submit" value="Create grid"></p>
@@ -27,7 +27,7 @@
 
 <form action="" method="post" name="bubbles_grid">
     <input type="hidden" name="editor" value="grid">
-    <p>Enter your bubble contents here, one bubble per box:</p>
+    <p>Enter/edit your bubble contents here, one bubble per box:</p>
     {% for row in range(context["set_rows"]) %}
         <p>
             {% for col in range(context["set_cols"]) %}
@@ -35,7 +35,7 @@
             {% endfor %}
         </p>
     {% endfor %}
-    <input type="submit" value="I'm finished!">
+    <p><input type="submit" value="I'm finished!"></p>
 </form>
 
 {% endblock %}

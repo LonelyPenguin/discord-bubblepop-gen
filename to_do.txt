@@ -1,10 +1,5 @@
 - check character count warning
-- make it prettier
-    - standardize spacing
-    - add title, heading, explanation?
-    - add my github?
 - get favicon so http stops bugging me about it
-- make autofill a single space by default so if they leave it empty it'll still be bubbles
 - add README describing usage and my motivation
 
 - parent: 

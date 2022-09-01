@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Discord Bubble-Popping Spoilers Generator</title>
+        <title>Discord "Bubblewrap" Generator</title>
     </head>
+
     <body>
 
+        <h1>Discord "Bubblewrap" Spoiler Tags Generator</h1>
+        <h3>A tool to create digital bubble wrap, ripe for the popping, using Discord's spoiler tags feature.</h3>
+
+        <main>
         <form action="" name="choose_editor" method="post">
-            
-            <label for="editor_select">Change editor:</label>
+
+            <p><label for="editor_select">Change editor:</label>
             <select name="editors_select" id="editor_select">
                 {% block dropdown %}
                 <option value="basic">Basic editor</option>
                 <option value="grid">Grid editor (autofill option)</option>
                 {% endblock %}
             </select>
-            <input type="submit" value="Use editor">
+            <input type="submit" value="Use editor"></p>
             
         </form>
 
@@ -23,11 +28,18 @@
                 <input type="hidden" name="editor" value="basic">
                 <label for="freeform_entry">Construct your message below! Separate bubbles by commas or spaces, and separate rows with a new line.</label>
                 <p><textarea id="freeform_entry" name="freeform_entry" rows="8" cols="32">Enter text here</textarea></p>
-                <input type="submit" value="I'm finished!">
+                <p><input type="submit" value="I'm finished!"></p>
             </form> 
         {% endblock %}
 
-        <textarea rows="16" cols="64">{{ context["final_output"] }}</textarea> 
+        <label>Final output will appear below, for your copy/pasting pleasure:
+            <p><textarea rows="16" cols="64">{{ context["final_output"] }}</textarea></p>
+        </label>
+        </main>
 
+        <footer>
+            <p>Created with love by LonelyPenguin.</p>
+            <p>View source on <a href="https://github.com/LonelyPenguin/discord-bubblepop-gen">Github</a></p>
+        </footer>
     </body>
 </html>
