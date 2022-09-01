@@ -78,7 +78,6 @@ def grid_input(form):
 
         key = key.replace("point", "")
         key = [int(i) for i in key.split(",")]
-        print(key)
 
         individual_bubbles_list.append((key, value))
 
@@ -113,6 +112,5 @@ def grid_input(form):
 def hello_world():
     if request.method == "POST":
         mydata = request.form["mytext"]
-        print("hello " + mydata)
         return render_template("hello.html", context={"fill_text": mydata})
     return render_template("hello.html", context={"fill_text": ""})
