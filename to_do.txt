@@ -1,4 +1,4 @@
-- check character count warning
+
 - get favicon so http stops bugging me about it
 - add README describing usage and my motivation
 

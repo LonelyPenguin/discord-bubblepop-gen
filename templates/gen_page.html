@@ -33,6 +33,9 @@
         {% endblock %}
 
         <label>Final output will appear below, for your copy/pasting pleasure:
+            {% if context["final_output"]|length > 2000 %}
+            <p><b>WARNING!</b> Output is longer than 2000 characters <b>(length: {{ context["final_output"]|length }})</b> and Discord may cut it off.</p>
+            {% endif %}
             <p><textarea rows="16" cols="64">{{ context["final_output"] }}</textarea></p>
         </label>
         </main>
