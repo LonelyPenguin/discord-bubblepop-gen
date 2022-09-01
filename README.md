@@ -1,8 +1,8 @@
-This is a simple webpage that facilitates easy generation of "discord bubblewrap," a.k.a. some characters individually enclosed in spoiler markers.
+This is a simple webpage that facilitates easy generation of "discord bubblewrap," a.k.a. some characters individually enclosed in spoiler markers. Each separate spoiler-tag enclosure is known as a "bubble." Bubbles do not need to be consistent in length.
 
 It has two editors: a basic editor, which is just a single text box, and a grid editor, in which each square in the grid is one bubble.
 
-In the basic editor, bubbles are separated by commas, or by spaces if no commas are detected. Rows can be any length and don't need to be consistent.
+In the basic editor, bubbles are separated by commas, or by spaces if no commas are detected. Each row can contain any number of bubbles.
 
 In the grid editor, the dimensions of the grid are customisable, and the "autofill" option will prefill the grid with whatever is inputted. These prefills can be overwritten. Empty boxes will still get spoiler markdown tags generated for them, and will look wonky once pasted into Discord. It is up to the user (you) to delete these. Sorry.
 

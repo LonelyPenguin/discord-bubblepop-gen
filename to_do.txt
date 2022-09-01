@@ -1,13 +1,3 @@
-
-- get favicon so http stops bugging me about it
-- add README describing usage and my motivation
-
-- parent: 
-    - title
-    - "diy box/paint-by-numbers grid" option + submit
-    - {% block %} w/ basic text box option as default
-    - results box
-
-- child: 
-    - grid dimensions inputs
-    - autofill textbox
+nothing more to do :)
+or, well.
+- delete empty spoiler tags that break the markdown? (probably won't happen)
