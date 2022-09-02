@@ -30,7 +30,7 @@ def gen_page():
                 if "," in input:
                     rows_and_columns = [row.split(",") for row in in_rows]
                 else:
-                    rows_and_columns = [row.split(" ") for row in in_rows]
+                    rows_and_columns = [row.split() for row in in_rows]
 
                 spoilered_rows = []
                 for row in rows_and_columns:

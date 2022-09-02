@@ -1,4 +1,3 @@
 nothing more to do :)
 or, well.
 - delete empty spoiler tags that break the markdown? (probably won't happen)
-- yeah sorry hun you're gonna have to filter for trailing spaces/commas in basic editor
