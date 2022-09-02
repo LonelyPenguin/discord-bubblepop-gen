@@ -34,12 +34,12 @@
         {% endblock %}
 
         <label>Final output will appear below, for your copy/pasting pleasure:
-            {% if context["final_output"]|length > 2000 %}
-            <p><b>WARNING!</b> Output is longer than 2000 characters <b>(length: {{ context["final_output"]|length }})</b> and Discord may cut it off.</p>
+            {% if context["final_output"]|length > 1000 %}
+            <p><b>WARNING!</b> Output is longer than 1000 characters <b>(length: {{ context["final_output"]|length }})</b> and Discord may cut it off if it includes many custom emojis (see below for details).</p>
             {% endif %}
             <p><textarea rows="16" cols="64">{{ context["final_output"] }}</textarea></p>
         </label>
-        <p>A note on Discord character limits: I've included a warning when you go over 2000 characters in the output from this webpage, but you may reach the limit sooner than that with Discord emojis. Currently, Discord doesn't do a great job of warning you when you exceed the character limit with this bubble-wrap-type text. If you send your message and a bot called Clyde tells you it couldn't be delivered, try chopping a row off the end and trying again. (Each custom emoji gains 21 extra unseen characters once you send it, compared to the :emojiname: version you see when you type it. You can do the math if you want to have a precisely-calibrated-for-maximium-size piece of custom bubblewrap.)</p>
+        <p>A note on Discord character limits: Each custom emoji gains 21 extra unseen characters once you send it, compared to the :emojiname: version you see when you type it. Currently, Discord doesn't do a great job of warning you when you exceed the character limit with this bubble-wrap-type text. If you send your message and a bot called Clyde tells you it couldn't be delivered, try chopping a few bubbles off the end and trying again. (You can do the math if you want to have a precisely-calibrated-for-maximium-size piece of custom bubblewrap.)</p>
         </main>
 
         <footer>
