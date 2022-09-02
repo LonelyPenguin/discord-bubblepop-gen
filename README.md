@@ -12,6 +12,6 @@ If you'd like to run this site on your own computer, download the whole folder a
 
 You can access the web-hosted version at https://discord-bubblewrap.herokuapp.com/.
 
-This is a hobby project and I make no guarantees as to its quality, length of life, etc.
+This is a hobby project and I make no guarantees as to its quality, length of life, etc. Favicon was made by me and is under the same license as the rest of the project.
 
 Many thanks to the wonderful people on the Murderbot Diaries 2.0 Discord server, which has a thread dedicated to posting these "bubble wraps" and inspired me to make this little tool for them.
