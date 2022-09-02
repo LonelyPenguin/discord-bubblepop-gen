@@ -55,8 +55,8 @@ def grid_input(form):
     autofill = form.get("autofill")
 
     # set defaults, to be overriden
-    mycontext["set_rows"] = 8
-    mycontext["set_cols"] = 8
+    mycontext["set_rows"] = 7
+    mycontext["set_cols"] = 7
     mycontext["prefill"] = ""
     mycontext["final_output"] = "grid editor"
 
