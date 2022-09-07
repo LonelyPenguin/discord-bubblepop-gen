@@ -8,42 +8,50 @@ app = Flask(__name__)
 
 @app.route("/", methods=("GET", "POST"))
 def gen_page():
-    
-    mycontext = {}
 
     if request.method == "POST":
 
         myform = request.form
 
-        if myform.get("editor") == "grid" or myform.get("editors_select") == "grid":
-            #use grid editor
+        if myform.get("editor") == "basic" or myform.get("editors_select") == "basic":
+            # use basic editor
+            return basic_input(myform)
+
+        elif myform.get("editor") == "grid" or myform.get("editors_select") == "basic":
+            # use grid editor
             return grid_input(myform)
 
-        elif myform.get("editor") == "basic" or myform.get("editors_select") == "basic":
-            # use basic editor
+    # use grid editor as catch-all
+    myform = {}
+    return grid_input(myform)
 
-            try:
-                input = myform.get("freeform_entry")
-                in_rows = input.splitlines()
 
-                #check input instead of each row to be consistent with splitting behaviour for whole input
-                if "," in input:
-                    rows_and_columns = [row.split(",") for row in in_rows]
-                else:
-                    rows_and_columns = [row.split() for row in in_rows]
+def basic_input(form):
 
-                spoilered_rows = []
-                for row in rows_and_columns:
-                    spoilered_rows.append("||" + "||||".join(row) + "||")
+    mycontext = {}
 
-                output = "\n".join(spoilered_rows)
+    try:
+        input = form.get("freeform_entry")
+        in_rows = input.splitlines()
 
-                mycontext["final_output"] = output
+        #check input instead of each row to be consistent with splitting behaviour for whole input
+        if "," in input:
+            rows_and_columns = [row.split(",") for row in in_rows]
+        else:
+            rows_and_columns = [row.split() for row in in_rows]
 
-            except AttributeError:
-                pass
+        spoilered_rows = []
+        for row in rows_and_columns:
+            spoilered_rows.append("||" + "||||".join(row) + "||")
 
-    return render_template("gen_page.html", context=mycontext)
+        output = "\n".join(spoilered_rows)
+
+        mycontext["final_output"] = output
+
+    except AttributeError:
+        pass
+
+    return render_template("basic_input.html", context=mycontext)
 
 def grid_input(form):
 
